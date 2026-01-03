@@ -1,0 +1,169 @@
+.menu-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: white;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__item {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 -1px #ddd;
+  background: white;
+}
+
+.menu__item-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 700;
+  color: #000;
+  font-size: 7vh; /* 🔧 RESPONSIVE: Adjust font size here */
+  transition: color 0.3s ease;
+}
+
+.menu__item:hover .menu__item-link {
+  color: #fff;
+}
+
+.menu__item-link:focus:not(:focus-visible) {
+  color: #000;
+}
+
+.marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: #000;
+  transform: translate3d(0, 101%, 0);
+  transition: transform 0.4s ease;
+}
+
+.marquee__inner-wrap {
+  height: 100%;
+  width: 200%;
+  display: flex;
+  transform: translateX(0);
+}
+
+.marquee__inner {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: 200%;
+  will-change: transform;
+  animation: marquee 15s linear infinite;
+}
+
+.marquee span {
+  color: #fff;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 6vh; /* 🔧 RESPONSIVE: Adjust marquee text size here */
+  line-height: 1.2;
+  padding: 1vh 1vw 0;
+}
+
+.marquee__img {
+  width: 200px; /* 🔧 RESPONSIVE: Adjust image width here */
+  height: 7vh;
+  margin: 2em 2vw;
+  padding: 1em 0;
+  border-radius: 50px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.menu__item:hover .marquee {
+  transform: translate3d(0, 0%, 0);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ========================================
+   📱 RESPONSIVE STYLES - ADD BELOW
+   ======================================== */
+
+/* 🔧 TABLET (Medium devices: 768px - 1024px) */
+@media (max-width: 1024px) {
+  .menu__item-link {
+    font-size: 5vh; /* Reduce main text size for tablets */
+  }
+  
+  .marquee span {
+    font-size: 4.5vh; /* Reduce marquee text size */
+  }
+  
+  .marquee__img {
+    width: 150px; /* Smaller images on tablets */
+    height: 6vh;
+  }
+}
+
+/* 🔧 MOBILE (Small devices: up to 767px) */
+@media (max-width: 767px) {
+  .menu__item-link {
+    font-size: 4vh; /* Smaller text for mobile */
+    font-weight: 600; /* Slightly lighter weight */
+  }
+  
+  .marquee span {
+    font-size: 3.5vh; /* Smaller marquee text */
+    padding: 0.5vh 1vw 0;
+  }
+  
+  .marquee__img {
+    width: 100px; /* Much smaller images on mobile */
+    height: 5vh;
+    margin: 1em 1vw;
+  }
+  
+  .menu__item {
+    box-shadow: 0 -0.5px #ddd; /* Thinner borders on mobile */
+  }
+}
+
+/* 🔧 EXTRA SMALL (Very small phones: up to 480px) */
+@media (max-width: 480px) {
+  .menu__item-link {
+    font-size: 3.5vh; /* Even smaller for tiny screens */
+  }
+  
+  .marquee span {
+    font-size: 2.8vh;
+  }
+  
+  .marquee__img {
+    width: 80px;
+    height: 4vh;
+  }
+}
