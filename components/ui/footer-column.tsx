@@ -11,6 +11,16 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 
+/* ---------------- TYPES ---------------- */
+
+type HelpfulLink = {
+  text: string;
+  href: string;
+  hasIndicator?: boolean;
+};
+
+/* ---------------- DATA ---------------- */
+
 const data = {
   facebookLink: 'https://facebook.com/mvpblocks',
   instaLink: 'https://instagram.com/mvpblocks',
@@ -18,7 +28,7 @@ const data = {
   githubLink: 'https://github.com/mvpblocks',
   dribbbleLink: 'https://dribbble.com/mvpblocks',
   services: {
-    webdev: '',//links are pasted here
+    webdev: '',
     webdesign: '',
     marketing: '',
     googleads: '',
@@ -43,9 +53,11 @@ const data = {
     name: 'Drille Digital',
     description:
       'Building beautiful and functional web experiences with modern technologies. We help startups and businesses create their digital presence.',
-    logo: '/assets/images/Drille Digital Logo White.svg', // Change this to your logo path
+    logo: '/assets/images/Drille Digital Logo White.svg',
   },
 };
+
+/* ---------------- LINKS ---------------- */
 
 const socialLinks = [
   { icon: Facebook, label: 'Facebook', href: data.facebookLink },
@@ -68,10 +80,10 @@ const serviceLinks = [
   { text: 'Branding', href: data.services.googleads },
 ];
 
-const helpfulLinks = [
+const helpfulLinks: HelpfulLink[] = [
   { text: 'FAQs', href: data.help.faqs },
   { text: 'Support', href: data.help.support },
-  { text: 'Live Chat', href: data.help.livechat,},
+  { text: 'Live Chat', href: data.help.livechat, hasIndicator: true },
 ];
 
 const contactInfo = [
@@ -79,6 +91,8 @@ const contactInfo = [
   { icon: Phone, text: data.contact.phone },
   { icon: MapPin, text: data.contact.address, isAddress: true },
 ];
+
+/* ---------------- COMPONENT ---------------- */
 
 export default function Footer4Col() {
   return (
@@ -155,15 +169,16 @@ export default function Footer4Col() {
                   <li key={text}>
                     <a
                       href={href}
-                      className={`${
+                      className={
                         hasIndicator
                           ? 'group flex justify-center gap-1.5 sm:justify-start'
                           : 'text-white/70 hover:text-white transition'
-                      }`}
+                      }
                     >
                       <span className="text-white/70 hover:text-white transition">
                         {text}
                       </span>
+
                       {hasIndicator && (
                         <span className="relative flex size-2">
                           <span className="bg-white absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" />
