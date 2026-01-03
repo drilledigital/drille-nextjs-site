@@ -19,6 +19,12 @@ type HelpfulLink = {
   hasIndicator?: boolean;
 };
 
+type ContactInfo = {
+  icon: React.ComponentType<{ className?: string }>;
+  text: string;
+  isAddress?: boolean;
+};
+
 /* ---------------- DATA ---------------- */
 
 const data = {
@@ -86,7 +92,7 @@ const helpfulLinks: HelpfulLink[] = [
   { text: 'Live Chat', href: data.help.livechat, hasIndicator: true },
 ];
 
-const contactInfo = [
+const contactInfo: ContactInfo[] = [
   { icon: Mail, text: data.contact.email },
   { icon: Phone, text: data.contact.phone },
   { icon: MapPin, text: data.contact.address, isAddress: true },
@@ -165,21 +171,21 @@ export default function Footer4Col() {
             <div className="text-center sm:text-left">
               <p className="text-lg font-medium text-white">Helpful Links</p>
               <ul className="mt-8 space-y-4 text-sm">
-                {helpfulLinks.map(({ text, href, hasIndicator }) => (
-                  <li key={text}>
+                {helpfulLinks.map((link) => (
+                  <li key={link.text}>
                     <a
-                      href={href}
+                      href={link.href}
                       className={
-                        hasIndicator
+                        link.hasIndicator
                           ? 'group flex justify-center gap-1.5 sm:justify-start'
                           : 'text-white/70 hover:text-white transition'
                       }
                     >
                       <span className="text-white/70 hover:text-white transition">
-                        {text}
+                        {link.text}
                       </span>
 
-                      {hasIndicator && (
+                      {link.hasIndicator && (
                         <span className="relative flex size-2">
                           <span className="bg-white absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" />
                           <span className="bg-white relative inline-flex size-2 rounded-full" />
@@ -194,20 +200,20 @@ export default function Footer4Col() {
             <div className="text-center sm:text-left">
               <p className="text-lg font-medium text-white">Contact Us</p>
               <ul className="mt-8 space-y-4 text-sm">
-                {contactInfo.map(({ icon: Icon, text, isAddress }) => (
-                  <li key={text}>
+                {contactInfo.map((item) => (
+                  <li key={item.text}>
                     <a
                       className="flex items-center justify-center gap-1.5 sm:justify-start"
                       href="#"
                     >
-                      <Icon className="text-white size-5 shrink-0 shadow-sm" />
-                      {isAddress ? (
+                      <item.icon className="text-white size-5 shrink-0 shadow-sm" />
+                      {item.isAddress ? (
                         <address className="text-white/70 -mt-0.5 flex-1 not-italic hover:text-white transition">
-                          {text}
+                          {item.text}
                         </address>
                       ) : (
                         <span className="text-white/70 flex-1 hover:text-white transition">
-                          {text}
+                          {item.text}
                         </span>
                       )}
                     </a>
@@ -225,7 +231,7 @@ export default function Footer4Col() {
             </p>
 
             <p className="text-white/70 mt-4 text-sm transition sm:order-first sm:mt-0">
-              &copy; 2025 {data.company.name}
+              &copy; 2026 {data.company.name}
             </p>
           </div>
         </div>
