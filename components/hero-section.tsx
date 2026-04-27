@@ -11,10 +11,10 @@ import { motion } from "motion/react"
 
 export default function HeroSection() {
   const avatarUrls = [
-    "https://i.pravatar.cc/150?img=1",
-    "https://i.pravatar.cc/150?img=2",
-    "https://i.pravatar.cc/150?img=3",
-    "https://i.pravatar.cc/150?img=4",
+    "/assets/images/businessman-smiling-camera-office.jpg",
+    "/assets/images/experienced-businessman-standing-office-room-indian-content-office-employee-eyeglasses-smiling-posing-with-folded-hands-business-management-corporation-concept.jpg",
+    "assets/images/medium-shot-queer-person-work.jpg",
+    "assets/images/front-view-businessman-with-crossed-arms.jpg",
   ];
 
   return (
@@ -46,7 +46,7 @@ export default function HeroSection() {
                     size="lg"
                     className="h-12 rounded-full pl-5 pr-3 text-base"
                   >
-                    <Link href="#link">
+                    <Link href="https://calendly.com/drillemanagement/new-meeting?month=2026-04">
                       <span className="text-nowrap">Work with us</span>
                       <ChevronRight className="ml-1" />
                     </Link>
@@ -58,7 +58,7 @@ export default function HeroSection() {
                     variant="ghost"
                     className="h-12 rounded-full px-5 text-base hover:bg-zinc-950/5 dark:hover:bg-white/5"
                   >
-                    <Link href="#link">
+                    <Link href="#projects">
                       <span className="text-nowrap text-amber-50">See Our Work</span>
                     </Link>
                   </Button>
@@ -112,15 +112,6 @@ export default function HeroSection() {
                   </div>
                   <div className="flex">
                     <img
-                      className="mx-auto h-4 w-fit opacity-70 filter-to-white"
-                      src="https://html.tailus.io/blocks/customers/github.svg"
-                      alt="GitHub Logo"
-                      height="16"
-                      width="auto"
-                    />
-                  </div>
-                  <div className="flex">
-                    <img
                       className="mx-auto h-5 w-fit opacity-70 filter-to-white"
                       src="/assets/logos/HubSpot_idHe7kSdFV_0.svg"
                       alt="Hubspot Logo"
@@ -133,15 +124,6 @@ export default function HeroSection() {
                       className="mx-auto h-5 w-fit opacity-70 filter-to-white"
                       src="/assets/logos/Shopify.com_Logo_0.svg"
                       alt="Shopify Logo"
-                      height="20"
-                      width="auto"
-                    />
-                  </div>
-                  <div className="flex">
-                    <img
-                      className="mx-auto h-4 w-fit opacity-70 filter-to-white"
-                      src="https://html.tailus.io/blocks/customers/laravel.svg"
-                      alt="Laravel Logo"
                       height="20"
                       width="auto"
                     />

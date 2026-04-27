@@ -20,7 +20,7 @@ const projects: Project[] = [
     subtitle: "Tech in service of social impact",
     image: "/assets/images/laptop chair P1M mockup.png",
     tags: ["Strategy", "Visual Identity", "Website"],
-    link: "https://example.com", // Add your actual URL here
+    link: "https://example.com",
   },
   {
     id: "2",
@@ -28,7 +28,7 @@ const projects: Project[] = [
     subtitle: "Center For Leadership",
     image: "/assets/images/Ashesi Center For Leadership Mockup on table.png",
     tags: ["Strategy", "Marketing", "Graphic Design"],
-    link: "", // Leave empty if no link yet
+    link: "",
   },
   {
     id: "3",
@@ -82,7 +82,7 @@ export default function OurProjects() {
   }
 
   return (
-    <section className="w-full bg-background py-24 px-4 md:px-8">
+    <section id="projects" className="w-full bg-background py-24 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-16">
