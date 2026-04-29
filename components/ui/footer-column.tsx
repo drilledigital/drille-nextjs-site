@@ -28,11 +28,11 @@ type ContactInfo = {
 /* ---------------- DATA ---------------- */
 
 const data = {
-  facebookLink: 'https://facebook.com/mvpblocks',
-  instaLink: 'https://instagram.com/mvpblocks',
-  twitterLink: 'https://twitter.com/mvpblocks',
-  githubLink: 'https://github.com/mvpblocks',
-  dribbbleLink: 'https://dribbble.com/mvpblocks',
+  facebookLink: '',
+  instaLink: 'https://www.instagram.com/drille_digital',
+  twitterLink: 'https://x.com/drille_digital',
+  githubLink: '',
+  dribbbleLink: '',
   services: {
     webdev: '',
     webdesign: '',
