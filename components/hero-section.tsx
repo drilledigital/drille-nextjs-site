@@ -91,60 +91,54 @@ export default function HeroSection() {
               </div>
               <div className="relative py-6 md:w-[calc(100%-11rem)]">
                 <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
-                  <div className="flex">
+                  <div className="flex shrink-0 items-center">
                     <img
-                      className="mx-auto h-5 w-fit opacity-70 filter-to-white"
+                      className="mx-auto h-5 w-auto opacity-70 filter-to-white"
                       src="/assets/logos/Zapier_idfZNtxiND_1.png"
                       alt="Figma Logo"
                       height="20"
-                      width="auto"
                     />
                   </div>
 
-                  <div className="flex">
+                  <div className="flex shrink-0 items-center">
                     <img
-                      className="mx-auto h-4 w-fit opacity-70 filter-to-white"
+                      className="mx-auto h-4 w-auto opacity-70 filter-to-white"
                       src="/assets/logos/WooCommerce_Logo_0.svg"
                       alt="Woo Logo"
-                      height="20"
-                      width="auto"
+                      height="16"
                     />
                   </div>
-                  <div className="flex">
+                  <div className="flex shrink-0 items-center">
                     <img
-                      className="mx-auto h-5 w-fit opacity-70 filter-to-white"
+                      className="mx-auto h-5 w-auto opacity-70 filter-to-white"
                       src="/assets/logos/HubSpot_idHe7kSdFV_0.svg"
                       alt="Hubspot Logo"
                       height="20"
-                      width="auto"
                     />
                   </div>
-                  <div className="flex">
+                  <div className="flex shrink-0 items-center">
                     <img
-                      className="mx-auto h-5 w-fit opacity-70 filter-to-white"
+                      className="mx-auto h-5 w-auto opacity-70 filter-to-white"
                       src="/assets/logos/Shopify.com_Logo_0.svg"
                       alt="Shopify Logo"
                       height="20"
-                      width="auto"
                     />
                   </div>
-                  <div className="flex">
+                  <div className="flex shrink-0 items-center">
                     <img
-                      className="mx-auto h-7 w-fit opacity-70 filter-to-white"
+                      className="mx-auto h-7 w-auto opacity-70 filter-to-white"
                       src="/assets/logos/Supabase_idZ_4AZztt_0.svg"
                       alt="Supabase Logo"
                       height="28"
-                      width="auto"
                     />
                   </div>
 
-                  <div className="flex">
+                  <div className="flex shrink-0 items-center">
                     <img
-                      className="mx-auto h-6 w-fit opacity-70 filter-to-white"
+                      className="mx-auto h-6 w-auto opacity-70 filter-to-white"
                       src="/assets/logos/nextjs.png"
                       alt="Next Js Logo"
                       height="24"
-                      width="auto"
                     />
                   </div>
                 </InfiniteSlider>
