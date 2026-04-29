@@ -1,8 +1,6 @@
 import {
-  Dribbble,
-  Facebook,
-  Github,
   Instagram,
+  Linkedin,
   Mail,
   MapPin,
   Phone,
@@ -28,11 +26,9 @@ type ContactInfo = {
 /* ---------------- DATA ---------------- */
 
 const data = {
-  facebookLink: '',
+  linkedinLink: 'https://www.linkedin.com/company/drille-digital',
   instaLink: 'https://www.instagram.com/drille_digital',
   twitterLink: 'https://x.com/drille_digital',
-  githubLink: '',
-  dribbbleLink: '',
   services: {
     webdev: '',
     webdesign: '',
@@ -66,11 +62,9 @@ const data = {
 /* ---------------- LINKS ---------------- */
 
 const socialLinks = [
-  { icon: Facebook, label: 'Facebook', href: data.facebookLink },
+  { icon: Linkedin, label: 'LinkedIn', href: data.linkedinLink },
   { icon: Instagram, label: 'Instagram', href: data.instaLink },
   { icon: Twitter, label: 'Twitter', href: data.twitterLink },
-  { icon: Github, label: 'GitHub', href: data.githubLink },
-  { icon: Dribbble, label: 'Dribbble', href: data.dribbbleLink },
 ];
 
 const aboutLinks = [
