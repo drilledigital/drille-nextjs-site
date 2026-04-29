@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Drille Digital",
-  description: "We craft digital identities, websites, and automated systems",
+  description: "We craft digital identities, websites, and automated systems that help businesses grow in the digital age.",
 };
 
 export default function RootLayout({
