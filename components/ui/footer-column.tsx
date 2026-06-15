@@ -11,12 +11,6 @@ import Image from 'next/image';
 
 /* ---------------- TYPES ---------------- */
 
-type HelpfulLink = {
-  text: string;
-  href: string;
-  hasIndicator?: boolean;
-};
-
 type ContactInfo = {
   icon: React.ComponentType<{ className?: string }>;
   text: string;
@@ -36,15 +30,13 @@ const data = {
     googleads: '',
   },
   about: {
-    history: '/company-history',
-    team: '/meet-the-team',
-    handbook: '/employee-handbook',
-    careers: '/careers',
+    company: '#about',
   },
-  help: {
-    faqs: '/faqs',
-    support: '/support',
-    livechat: '/live-chat',
+  quick: {
+    home: '#',
+    work: '#projects',
+    vision: '#about',
+    faqs: '#faqs',
   },
   contact: {
     email: 'hi@drilledigital.com',
@@ -68,9 +60,7 @@ const socialLinks = [
 ];
 
 const aboutLinks = [
-  { text: 'Company', href: data.about.history },
-  { text: 'Meet the Team', href: data.about.team },
-  { text: 'Careers', href: data.about.careers },
+  { text: 'Company', href: data.about.company },
 ];
 
 const serviceLinks = [
@@ -80,10 +70,11 @@ const serviceLinks = [
   { text: 'Branding', href: data.services.googleads },
 ];
 
-const helpfulLinks: HelpfulLink[] = [
-  { text: 'FAQs', href: data.help.faqs },
-  { text: 'Support', href: data.help.support },
-  { text: 'Live Chat', href: data.help.livechat, hasIndicator: true },
+const quickLinks = [
+  { text: 'Home', href: data.quick.home },
+  { text: 'Our Work', href: data.quick.work },
+  { text: 'About', href: data.quick.vision },
+  { text: 'FAQs', href: data.quick.faqs },
 ];
 
 const contactInfo: ContactInfo[] = [
@@ -163,28 +154,15 @@ export default function Footer4Col() {
             </div>
 
             <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-white">Helpful Links</p>
+              <p className="text-lg font-medium text-white">Quick Links</p>
               <ul className="mt-8 space-y-4 text-sm">
-                {helpfulLinks.map((link) => (
-                  <li key={link.text}>
+                {quickLinks.map(({ text, href }) => (
+                  <li key={text}>
                     <a
-                      href={link.href}
-                      className={
-                        link.hasIndicator
-                          ? 'group flex justify-center gap-1.5 sm:justify-start'
-                          : 'text-white/70 hover:text-white transition'
-                      }
+                      className="text-white/70 hover:text-white transition"
+                      href={href}
                     >
-                      <span className="text-white/70 hover:text-white transition">
-                        {link.text}
-                      </span>
-
-                      {link.hasIndicator && (
-                        <span className="relative flex size-2">
-                          <span className="bg-white absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" />
-                          <span className="bg-white relative inline-flex size-2 rounded-full" />
-                        </span>
-                      )}
+                      {text}
                     </a>
                   </li>
                 ))}

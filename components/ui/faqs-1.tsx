@@ -8,7 +8,7 @@ import {
 
 export function FaqsSection() {
 	return (
-		<div className="mx-auto w-full max-w-3xl space-y-7 px-4 pt-16">
+		<div id="faqs" className="mx-auto w-full max-w-3xl space-y-7 px-4 pt-16">
 			<div className="space-y-2">
 				<h2 className="text-3xl font-bold md:text-4xl">Frequently Asked Questions</h2>
 				<p className="text-muted-foreground max-w-2xl">

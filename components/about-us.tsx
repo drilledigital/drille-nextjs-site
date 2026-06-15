@@ -102,7 +102,7 @@ const AboutSection = () => {
       {/* ========================================
           MAIN CONTAINER
           ======================================== */}
-      <div data-nav-theme="dark" className="relative bg-black text-white min-h-screen flex flex-col items-center justify-center px-6 lg:py-20 md:py-28">
+      <div id="about" data-nav-theme="dark" className="relative bg-black text-white min-h-screen flex flex-col items-center justify-center px-6 lg:py-20 md:py-28">
         
         {/* ========================================
             ABOUT US BADGE (ShimmerButton)

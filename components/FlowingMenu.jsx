@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { gsap } from 'gsap';
-import { Button } from '@/components/ui/moving-border' 
 
 import './FlowingMenu.css';
 
@@ -34,19 +33,17 @@ function FlowingMenu({ items = defaultItems }) {
     // for layout flexibility).
     <div className="flowing-menu-container"> 
       
-      {/* 1. Button component at the top-left */}
-      <div className="flex items-center gap-3 ml-10 pl-20 pb-9 mb-10 lg:mb-0">
-        <Button
-          borderRadius="1rem"
-          className="bg-white border-slate-200 text-black font-medium"
-          containerClassName="h-auto w-auto"
-          borderClassName="bg-[radial-gradient(#3b82f6_40%,transparent_60%)]"
-          duration={3000}
-        >
-          <span className="text-xs md:text-sm tracking-wider uppercase px-4 py-2">
-            OUR SERVICES
+      {/* 1. Section badge at the top-left */}
+      <div className="flex items-center ml-10 pl-20 pb-9 mb-10 lg:mb-0">
+        <div className="inline-flex items-center gap-3">
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-500 opacity-60" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-600" />
           </span>
-        </Button>
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-black/60">
+            Our Services
+          </span>
+        </div>
       </div>
 
       {/* 2. Menu component */}

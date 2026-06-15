@@ -1,8 +1,32 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { useInView, useMotionValue, animate } from 'framer-motion';
-import { Button } from '@/components/ui/moving-border';
+import {
+  useInView,
+  useMotionValue,
+  animate,
+  motion,
+  useScroll,
+  useTransform,
+  MotionValue,
+} from 'framer-motion';
+
+const Word = ({
+  children,
+  progress,
+  range,
+}: {
+  children: string;
+  progress: MotionValue<number>;
+  range: [number, number];
+}) => {
+  const color = useTransform(progress, range, ['rgb(209, 213, 219)', 'rgb(0, 0, 0)']);
+  return (
+    <motion.span style={{ color }} className="inline-block mr-[0.25em]">
+      {children}
+    </motion.span>
+  );
+};
 
 const CountUp = ({ target, suffix }: { target: number; suffix: string }) => {
   const ref = useRef<HTMLSpanElement>(null);
@@ -36,6 +60,15 @@ const OurVisionSection = () => {
     { target: 100, suffix: '+', label: 'Workflow hours saved for clients through better systems & automation' },
   ];
 
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: headingRef,
+    offset: ['start 0.95', 'start -0.2'],
+  });
+  const headingText =
+    'From brands to websites to full digital systems — we drill precision, clarity, and growth into everything we create.';
+  const words = headingText.split(' ');
+
   return (
     <>
       {/* 1. Font and Global Styles */}
@@ -59,19 +92,17 @@ const OurVisionSection = () => {
             {/* A. Left Column: Titles/Badges */}
             <div className="lg:col-span-3 flex flex-col justify-between">
               
-              {/* Top Badge: OUR VISION with Moving Border */}
-              <div className="flex items-center gap-3 mb-10 lg:mb-0">
-                <Button
-                  borderRadius="1rem"
-                  className="bg-white border-slate-200 text-black font-medium"
-                  containerClassName="h-auto w-auto"
-                  borderClassName="bg-[radial-gradient(#3b82f6_40%,transparent_60%)]"
-                  duration={3000}
-                >
-                  <span className="text-xs md:text-sm tracking-wider uppercase px-4 py-2">
-                    OUR VISION
+              {/* Top Badge: OUR VISION */}
+              <div className="flex items-center mb-10 lg:mb-0">
+                <div className="inline-flex items-center gap-3">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-500 opacity-60" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-600" />
                   </span>
-                </Button>
+                  <span className="text-xs font-semibold uppercase tracking-[0.3em] text-black/60">
+                    Our Vision
+                  </span>
+                </div>
               </div>
               
               {/* Bottom Badge: SERVICES (Pushed to the bottom of the column) */}
@@ -83,8 +114,19 @@ const OurVisionSection = () => {
             <div className="lg:col-span-9">
               
               {/* Main Heading */}
-              <h2 className="text-4xl sm:text-5xl lg:text-7xl leading-tight mb-10 font-semibold tracking-tighter">
-                From brands to websites to full digital systems — we drill precision, clarity, and growth into everything we create.
+              <h2
+                ref={headingRef}
+                className="text-4xl sm:text-5xl lg:text-7xl leading-tight mb-10 font-semibold tracking-tighter flex flex-wrap"
+              >
+                {words.map((word, i) => {
+                  const start = i / words.length;
+                  const end = start + 1 / words.length;
+                  return (
+                    <Word key={i} progress={scrollYProgress} range={[start, end]}>
+                      {word}
+                    </Word>
+                  );
+                })}
               </h2>
               
               {/* Description/Paragraph */}
