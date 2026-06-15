@@ -1,14 +1,39 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { useInView, useMotionValue, animate } from 'framer-motion';
 import { Button } from '@/components/ui/moving-border';
+
+const CountUp = ({ target, suffix }: { target: number; suffix: string }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.5 });
+  const motionValue = useMotionValue(0);
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    const controls = animate(motionValue, target, {
+      duration: 2,
+      ease: [0.22, 1, 0.36, 1],
+      onUpdate: (latest) => setDisplay(Math.round(latest)),
+    });
+    return () => controls.stop();
+  }, [inView, target, motionValue]);
+
+  return (
+    <span ref={ref}>
+      {display}
+      {suffix}
+    </span>
+  );
+};
 
 const OurVisionSection = () => {
   // Data for the metrics cards
   const metrics = [
-    { value: '45+', label: 'Brands supported across design, web, and digital strategy' },
-    { value: '92%', label: 'Client retention and referrals' },
-    { value: '100+', label: 'Workflow hours saved for clients through better systems & automation' },
+    { target: 45, suffix: '+', label: 'Brands supported across design, web, and digital strategy' },
+    { target: 92, suffix: '%', label: 'Client retention and referrals' },
+    { target: 100, suffix: '+', label: 'Workflow hours saved for clients through better systems & automation' },
   ];
 
   return (
@@ -24,7 +49,7 @@ const OurVisionSection = () => {
       `}</style>
 
       {/* 2. Main Container with Grid Layout */}
-      <div className="vision-section bg-white text-black p-8 md:p-16 lg:p-24">
+      <div data-nav-theme="light" className="vision-section bg-white text-black p-8 md:p-16 lg:p-24">
         
         {/* Blue Borders (Simulating the effect seen in the screenshot edges) */}
         <div className="border-t-2 border-b-2 py-10 md:py-20">
@@ -72,8 +97,8 @@ const OurVisionSection = () => {
                 {metrics.map((metric, index) => (
                   <div key={index}>
                     {/* Metric Value */}
-                    <p className="text-4xl sm:text-5xl lg:text-7xl font-semibold text-blue-600 mb-2">
-                      {metric.value}
+                    <p className="text-5xl sm:text-6xl lg:text-7xl font-normal text-blue-600 mb-3 tracking-tight leading-none">
+                      <CountUp target={metric.target} suffix={metric.suffix} />
                     </p>
                     {/* Metric Label */}
                     <p className="text-base text-gray-700">

@@ -56,24 +56,33 @@ const projects: Project[] = [
   },
   {
     id: "6",
-    title: "Strava",
-    subtitle: "Re-imagining Luxury Interior Spaces",
-    image: "/assets/images/Strakta Hero Device Mockup.png",
+    title: "Infrastructure Institute for Development",
+    subtitle: "Shaping Africa's Infrastructure Future",
+    image: "/assets/images/IID web mockup.png",
     tags: ["UI/UX", "Visual Identity", "Website"],
+    link: "",
+  },
+  {
+    id: "7",
+    title: "Doxa Scholarships",
+    subtitle: "Scholarship Application Platform",
+    image: "/assets/images/Doxa Scholarships Mockups Hero.png",
+    tags: ["UI/UX", "Website", "Donation Platform"],
+    link: "",
+  },
+  {
+    id: "8",
+    title: "Beryl's Quick Snacks",
+    subtitle: "Online Food Brand",
+    image: "/assets/images/Berylsquicksnacks UI Mockup.png",
+    tags: ["UI/UX", "E-commerce", "Website"],
     link: "",
   },
 ]
 
 export default function OurProjects() {
-  const [hoveredProject, setHoveredProject] = useState<string | null>(null)
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    setMousePosition({
-      x: e.clientX,
-      y: e.clientY,
-    })
-  }
+  const [hovered, setHovered] = useState(false)
+  const [mouse, setMouse] = useState({ x: 0, y: 0 })
 
   const handleProjectClick = (link?: string) => {
     if (link) {
@@ -82,7 +91,7 @@ export default function OurProjects() {
   }
 
   return (
-    <section id="projects" className="w-full bg-background py-24 px-4 md:px-8">
+    <section id="projects" data-nav-theme="light" className="w-full bg-background py-24 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-16">
@@ -100,24 +109,37 @@ export default function OurProjects() {
             <div
               key={project.id}
               className="group cursor-pointer"
-              onMouseEnter={() => setHoveredProject(project.id)}
-              onMouseLeave={() => setHoveredProject(null)}
-              onMouseMove={handleMouseMove}
               onClick={() => handleProjectClick(project.link)}
             >
               {/* Image Container */}
-              <div className="relative w-full h-64 md:h-72 overflow-hidden mb-6 bg-muted">
+              <div
+                data-cursor-hidden
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+                onMouseMove={(e) => setMouse({ x: e.clientX, y: e.clientY })}
+                className="relative w-full h-64 md:h-72 overflow-hidden mb-6 bg-muted rounded-xl ring-1 ring-black/5 transition-all duration-500 group-hover:ring-blue-500/30 group-hover:shadow-[0_20px_60px_-20px_rgba(59,130,246,0.35)]"
+              >
                 <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover transition-transform duration-[700ms] ease-out group-hover:scale-[1.08]"
                 />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                {/* Tag chip */}
+                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur text-xs font-medium text-black tracking-wide opacity-0 -translate-y-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                  {project.tags[0]}
+                </div>
+                {/* Arrow indicator */}
+                <div className="absolute bottom-4 right-4 flex items-center justify-center w-12 h-12 rounded-full bg-white text-black opacity-0 translate-y-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                  <ArrowRight className="w-5 h-5" />
+                </div>
               </div>
 
               {/* Project Info */}
               <div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">
+                <h3 className="text-2xl font-bold text-foreground mb-2 transition-colors duration-300 group-hover:text-blue-600">
                   {project.title} <span className="text-muted-foreground font-normal">| {project.subtitle}</span>
                 </h3>
                 <p className="text-xl text-muted-foreground">{project.tags.join(" · ")}</p>
@@ -126,20 +148,21 @@ export default function OurProjects() {
           ))}
         </div>
 
-        {/* Floating Badge */}
-        {hoveredProject && (
-          <div
-            className="fixed pointer-events-none z-50 px-6 py-3 bg-blue-600 text-white text-lg font-bold tracking-wider rounded-full shadow-xl"
-            style={{
-              left: `${mousePosition.x}px`,
-              top: `${mousePosition.y}px`,
-              transform: "translate(-50%, -50%)",
-            }}
-          >
-            CASE STUDY COMING SOON
-          </div>
-        )}
       </div>
+
+      {/* Floating Case Study Pill */}
+      {hovered && (
+        <div
+          className="fixed pointer-events-none z-[60] px-5 py-2.5 bg-white text-black text-xs uppercase tracking-[0.2em] font-bold rounded-full shadow-xl transition-opacity duration-200"
+          style={{
+            left: `${mouse.x}px`,
+            top: `${mouse.y}px`,
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          Case Study Coming Soon
+        </div>
+      )}
     </section>
   )
 }

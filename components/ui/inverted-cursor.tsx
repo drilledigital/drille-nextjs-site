@@ -37,7 +37,9 @@ export const Cursor: React.FC<CursorProps> = ({ size = 60 }) => {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setVisible(true);
+      const target = e.target as HTMLElement | null;
+      const inHiddenZone = !!target?.closest('[data-cursor-hidden]');
+      setVisible(!inHiddenZone);
       setPosition({ x: e.clientX, y: e.clientY });
     };
 

@@ -1,5 +1,6 @@
 import UnifiedPreloader from "@/components/preloader";
 import HeroSection from "@/components/hero-section";
+import { HeroHeader } from "@/components/header";
 import { StaggerTestimonials } from "@/components/ui/stagger-testimonials";
 import Footer4Col from "@/components/ui/footer-column";
 import AboutSection from "@/components/about-us";
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <div> 
       <UnifiedPreloader />
+      <HeroHeader />
       <HeroSection />
       <AboutSection />
       <OurVisionSection/>

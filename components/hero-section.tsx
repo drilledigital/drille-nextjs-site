@@ -3,11 +3,11 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { HeroHeader } from "./header";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
-import { BanknoteArrowUp, ChevronRight } from "lucide-react";
+import { BanknoteArrowUp, ChevronRight, ArrowUpRight } from "lucide-react";
 import { AvatarCircles } from "./ui/avatar-circles";
 import { motion } from "motion/react"
+import Aurora from "./Aurora";
 
 export default function HeroSection() {
   const avatarUrls = [
@@ -19,14 +19,12 @@ export default function HeroSection() {
 
   return (
     // 1. Replaced Fragment with a black wrapper div
-    <div className="bg-black min-h-screen w-full relative z-0">
+    <div data-nav-theme="dark" className="bg-black min-h-screen w-full relative z-0">
       <style>{`
         .filter-to-white {
           filter: brightness(0) invert(1) !important;
         }
       `}</style>
-      
-      <HeroHeader />
       
       <main className="overflow-x-hidden">
         <section>
@@ -40,28 +38,26 @@ export default function HeroSection() {
                   We craft digital identities, websites, and automated systems that position businesses for scale and global recognition.
                 </p>
 
-                <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="h-12 rounded-full pl-5 pr-3 text-base"
+                <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
+                  <Link
+                    href="https://calendly.com/drillemanagement/new-meeting"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative inline-flex items-center gap-3 h-12 pl-6 pr-2 rounded-full bg-white text-black overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(59,130,246,0.4)] hover:scale-[1.02]"
                   >
-                    <Link href="https://calendly.com/drillemanagement/new-meeting?month=2026-04">
-                      <span className="text-nowrap">Work with us</span>
-                      <ChevronRight className="ml-1" />
-                    </Link>
-                  </Button>
-                  <Button
-                    key={2}
-                    asChild
-                    size="lg"
-                    variant="ghost"
-                    className="h-12 rounded-full px-5 text-base hover:bg-zinc-950/5 dark:hover:bg-white/5"
+                    <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-blue-500/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                    <span className="relative text-nowrap text-sm font-semibold tracking-wide">Work with us</span>
+                    <span className="relative flex items-center justify-center w-9 h-9 rounded-full bg-black text-white transition-transform duration-500 group-hover:rotate-45">
+                      <ArrowUpRight className="w-4 h-4" />
+                    </span>
+                  </Link>
+                  <Link
+                    href="#projects"
+                    className="group inline-flex items-center gap-2 h-12 px-6 rounded-full border border-white/20 text-amber-50 text-sm font-medium transition-all duration-300 hover:border-white/50 hover:bg-white/5"
                   >
-                    <Link href="#projects">
-                      <span className="text-nowrap text-amber-50">See Our Work</span>
-                    </Link>
-                  </Button>
+                    <span className="text-nowrap">See Our Work</span>
+                    <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
                 </div>
 
                 <div className="mt-6 flex items-center justify-center gap-3 lg:justify-start">
@@ -71,13 +67,13 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Background Image Layer */}
-            {/* The inset-1 creates a small gap, allowing the bg-black from parent to show as a border */}
-            <div className="aspect-2/3 absolute inset-1 -z-10 overflow-hidden rounded-3xl border border-black/10 lg:aspect-video lg:rounded-[3rem] dark:border-white/5">
-              <img
-                src="/assets/images/Gradient.svg"
-                alt="Background gradient"
-                className="size-full object-cover md:rounded-[3rem]"
+            {/* Background Aurora Layer */}
+            <div className="absolute inset-1 -z-10 overflow-hidden rounded-3xl border border-black/10 lg:rounded-[3rem] dark:border-white/5 bg-black">
+              <Aurora
+                colorStops={["#3b82f6", "#8b5cf6", "#3b82f6"]}
+                amplitude={1.0}
+                blend={0.5}
+                speed={0.6}
               />
             </div>
           </div>
