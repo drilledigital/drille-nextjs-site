@@ -34,7 +34,7 @@ function FlowingMenu({ items = defaultItems }) {
     <div className="flowing-menu-container"> 
       
       {/* 1. Section badge at the top-left */}
-      <div className="flex items-center ml-10 pl-20 pb-9 mb-10 lg:mb-0">
+      <div className="flex items-center px-8 md:px-16 lg:px-24 pb-9 mb-10 lg:mb-0">
         <div className="inline-flex items-center gap-3">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-500 opacity-60" />
