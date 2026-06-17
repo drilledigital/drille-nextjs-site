@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 interface Project {
@@ -10,7 +11,7 @@ interface Project {
   subtitle: string
   image: string
   tags: string[]
-  link?: string
+  slug: string
 }
 
 const projects: Project[] = [
@@ -20,7 +21,7 @@ const projects: Project[] = [
     subtitle: "Tech in service of social impact",
     image: "/assets/images/laptop chair P1M mockup.png",
     tags: ["Strategy", "Visual Identity", "Website"],
-    link: "https://example.com",
+    slug: "project-one-million",
   },
   {
     id: "2",
@@ -28,7 +29,7 @@ const projects: Project[] = [
     subtitle: "Center For Leadership",
     image: "/assets/images/Ashesi Center For Leadership Mockup on table.png",
     tags: ["Strategy", "Marketing", "Graphic Design"],
-    link: "",
+    slug: "ashesi",
   },
   {
     id: "3",
@@ -36,7 +37,7 @@ const projects: Project[] = [
     subtitle: "Commerce experiences built for scale",
     image: "/assets/images/ThreeTwentyOne Mockup.png",
     tags: ["E-commerce", "SEO Marketing", "Website"],
-    link: "",
+    slug: "three-twenty-one",
   },
   {
     id: "4",
@@ -44,7 +45,7 @@ const projects: Project[] = [
     subtitle: "Ai Powered Fashion E-commerce",
     image: "/assets/images/Closet Fashion Laptop Mockup.png",
     tags: ["E-Commerce", "AI", "Website"],
-    link: "",
+    slug: "closet",
   },
   {
     id: "5",
@@ -52,7 +53,7 @@ const projects: Project[] = [
     subtitle: "Luxury Real Estate",
     image: "/assets/images/Grandport framer mockup.png",
     tags: ["UI/UX", "Visual Identity", "Website"],
-    link: "",
+    slug: "grandport",
   },
   {
     id: "6",
@@ -60,7 +61,7 @@ const projects: Project[] = [
     subtitle: "Shaping Africa's Infrastructure Future",
     image: "/assets/images/IID web mockup.png",
     tags: ["UI/UX", "Visual Identity", "Website"],
-    link: "",
+    slug: "infrastructure-institute-for-development",
   },
   {
     id: "7",
@@ -68,7 +69,7 @@ const projects: Project[] = [
     subtitle: "Scholarship Application Platform",
     image: "/assets/images/Doxa Scholarships Mockups Hero.png",
     tags: ["UI/UX", "Website", "Donation Platform"],
-    link: "",
+    slug: "doxa-scholarships",
   },
   {
     id: "8",
@@ -76,19 +77,13 @@ const projects: Project[] = [
     subtitle: "Online Food Brand",
     image: "/assets/images/Berylsquicksnacks UI Mockup.png",
     tags: ["UI/UX", "E-commerce", "Website"],
-    link: "",
+    slug: "beryls-quick-snacks",
   },
 ]
 
 export default function OurProjects() {
-  const [hovered, setHovered] = useState(false)
+  const [hoveredId, setHoveredId] = useState<string | null>(null)
   const [mouse, setMouse] = useState({ x: 0, y: 0 })
-
-  const handleProjectClick = (link?: string) => {
-    if (link) {
-      window.open(link, "_blank", "noopener,noreferrer")
-    }
-  }
 
   return (
     <section id="projects" data-nav-theme="light" className="w-full bg-background py-24 px-4 md:px-8">
@@ -106,16 +101,16 @@ export default function OurProjects() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (
-            <div
+            <Link
               key={project.id}
+              href={`/work/${project.slug}`}
               className="group cursor-pointer"
-              onClick={() => handleProjectClick(project.link)}
             >
               {/* Image Container */}
               <div
                 data-cursor-hidden
-                onMouseEnter={() => setHovered(true)}
-                onMouseLeave={() => setHovered(false)}
+                onMouseEnter={() => setHoveredId(project.id)}
+                onMouseLeave={() => setHoveredId(null)}
                 onMouseMove={(e) => setMouse({ x: e.clientX, y: e.clientY })}
                 className="relative w-full h-64 md:h-72 overflow-hidden mb-6 bg-muted rounded-xl ring-1 ring-black/5 transition-all duration-500 group-hover:ring-blue-500/30 group-hover:shadow-[0_20px_60px_-20px_rgba(59,130,246,0.35)]"
               >
@@ -144,14 +139,14 @@ export default function OurProjects() {
                 </h3>
                 <p className="text-xl text-muted-foreground">{project.tags.join(" · ")}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
       </div>
 
       {/* Floating Case Study Pill */}
-      {hovered && (
+      {hoveredId && (
         <div
           className="fixed pointer-events-none z-[60] px-5 py-2.5 bg-white text-black text-xs uppercase tracking-[0.2em] font-bold rounded-full shadow-xl transition-opacity duration-200"
           style={{
@@ -160,7 +155,7 @@ export default function OurProjects() {
             transform: "translate(-50%, -50%)",
           }}
         >
-          Case Study Coming Soon
+          View Case Study
         </div>
       )}
     </section>
