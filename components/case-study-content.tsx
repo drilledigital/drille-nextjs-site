@@ -171,7 +171,7 @@ export default function CaseStudyContent({ caseStudy: cs }: { caseStudy: CaseStu
       </section>
 
       {/* ── Quote block ─────────────────────────────────── */}
-      <section className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
+      {cs.quoteAuthor && <section className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
         <div className="max-w-4xl mx-auto">
           <Divider />
           <div className="py-16 md:py-20">
@@ -191,7 +191,7 @@ export default function CaseStudyContent({ caseStudy: cs }: { caseStudy: CaseStu
           </div>
           <Divider />
         </div>
-      </section>
+      </section>}
 
       {/* ── Back nav ────────────────────────────────────── */}
       <div className="px-6 md:px-12 lg:px-20 pb-12">

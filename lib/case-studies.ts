@@ -37,8 +37,8 @@ export const caseStudies: CaseStudy[] = [
       "The site launched to strong engagement from day one. Bounce rates came in well below industry benchmarks for nonprofit digital properties, and the average session duration suggested visitors were genuinely exploring rather than skimming. Partner inquiries increased significantly in the weeks following launch, and the identity system was adopted across printed materials, social media, and event collateral without modification — a sign that it was built with real-world flexibility from the start.",
     quote:
       "Drille Digital didn't just build us a website — they helped us articulate what Project One Million actually stands for. The brand feels like us, and the platform is something we're proud to share.",
-    quoteAuthor: "Kwame Asante",
-    quoteRole: "Co-Founder, Project One Million",
+    quoteAuthor: "Kassia Ella Agboka",
+    quoteRole: "Project One Million",
     images: [],
   },
   {
@@ -60,8 +60,8 @@ export const caseStudies: CaseStudy[] = [
       "The refreshed identity was rolled out across event materials, programme brochures, digital banners, and a flagship annual report. Feedback from the university's communications team highlighted the templates as a particular win — staff were able to produce on-brand materials without design training. The materials were also used to support a major fundraising drive that exceeded its initial target.",
     quote:
       "The work Drille Digital did gave our Centre a visual coherence we hadn't had before. Everything now looks like it comes from the same place, and that makes a real difference in how people perceive us.",
-    quoteAuthor: "Dr. Nana Ama Osei",
-    quoteRole: "Director, Ashesi Center for Leadership",
+    quoteAuthor: "Dr. Esi Ansah",
+    quoteRole: "Ashesi Center for Leadership",
     images: [],
   },
   {
@@ -83,8 +83,8 @@ export const caseStudies: CaseStudy[] = [
       "Within three months of launch, organic search traffic had grown significantly, with several category pages ranking on the first page of results for key terms. Conversion rates improved, and the average order value increased as better product discovery encouraged cross-category shopping. The checkout abandonment rate dropped sharply in the first thirty days.",
     quote:
       "We knew the website wasn't working as hard as it should, but we didn't know how to fix it. Drille Digital made it look easy, and the results have been real.",
-    quoteAuthor: "Adjoa Mensah",
-    quoteRole: "Head of Digital, Three Twenty One",
+    quoteAuthor: "Jeffrey",
+    quoteRole: "Three Twenty One",
     images: [],
   },
   {
@@ -106,8 +106,8 @@ export const caseStudies: CaseStudy[] = [
       "Closet launched to an early access waitlist and exceeded its initial sign-up target within the first two weeks. The onboarding completion rate was notably high for a flow that collected as much data as it did, which validated the editorial framing approach. Early user feedback highlighted the recommendation quality and the visual experience as standout features.",
     quote:
       "We had the technology and the vision — what we needed was someone who could make it beautiful and make it make sense. Drille Digital delivered both.",
-    quoteAuthor: "Efua Boateng",
-    quoteRole: "Founder, Closet",
+    quoteAuthor: "Jonathan Odonkor",
+    quoteRole: "Closet",
     images: [],
   },
   {
@@ -129,8 +129,8 @@ export const caseStudies: CaseStudy[] = [
       "The site launched ahead of the flagship development's sales campaign and generated a qualified lead pipeline that the sales team described as the strongest they had seen for a pre-launch phase. The identity system was extended across site hoardings, sales suite fit-out, and brochure design, maintaining consistency across every touchpoint in the buyer journey.",
     quote:
       "We've done property launches before, but never with a brand that felt this considered. Every piece of material felt like it belonged to the same world.",
-    quoteAuthor: "Kofi Antwi",
-    quoteRole: "Managing Director, Grandport",
+    quoteAuthor: "",
+    quoteRole: "",
     images: [],
   },
   {
@@ -152,8 +152,8 @@ export const caseStudies: CaseStudy[] = [
       "The new site significantly increased time-on-page for research publications, suggesting that the structural changes were helping visitors engage more deeply with the content. Download rates for major reports increased in the first month. The site was cited in several partnership presentations to multilateral institutions as evidence of the organisation's operational maturity.",
     quote:
       "The new identity and website have changed how people perceive us. We're now seen as one of the leading policy voices in the region, and our digital presence reflects that.",
-    quoteAuthor: "Dr. Ama Sarkodie",
-    quoteRole: "Executive Director, Infrastructure Institute for Development",
+    quoteAuthor: "Charles Kwame",
+    quoteRole: "Infrastructure Institute for Development",
     images: [],
   },
   {
@@ -175,8 +175,8 @@ export const caseStudies: CaseStudy[] = [
       "Application completion rates improved significantly after launch, with a notable reduction in applications abandoned mid-way. The donor platform went live with ten founding donors and grew organically from there. The Doxa team reported that the administrative time spent on application processing dropped by more than half.",
     quote:
       "We were held back for years by the limitations of our digital tools. What Drille Digital built for us has completely transformed our capacity to run the programme.",
-    quoteAuthor: "Emmanuel Tetteh",
-    quoteRole: "Executive Director, Doxa Scholarships",
+    quoteAuthor: "Wilfred Elegba",
+    quoteRole: "Doxa Scholarships",
     images: [],
   },
   {
@@ -198,8 +198,8 @@ export const caseStudies: CaseStudy[] = [
       "The site launched to Beryl's existing social following and converted a strong percentage of visitors in the first week. Repeat order rates were notably high from launch, suggesting the site had captured the loyalty the brand had built on social media. Beryl's has since expanded its delivery zones twice, and the site infrastructure has handled that growth without modification.",
     quote:
       "I've been making these snacks for years, but the website made it feel like a real business for the first time. People who've never met me trust the brand, and that's because of the work Drille Digital did.",
-    quoteAuthor: "Beryl Owusu",
-    quoteRole: "Founder, Beryl's Quick Snacks",
+    quoteAuthor: "Beryl Bempong",
+    quoteRole: "Beryl's Quick Snacks",
     images: [],
   },
 ]
