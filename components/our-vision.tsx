@@ -66,7 +66,7 @@ const OurVisionSection = () => {
     offset: ['start 0.95', 'start -0.2'],
   });
   const headingText =
-    'From brands to websites to full digital systems — we drill precision, clarity, and growth into everything we create.';
+    'From brands to websites to full digital systems, we drill precision, clarity, and growth into everything we create.';
   const words = headingText.split(' ');
 
   return (

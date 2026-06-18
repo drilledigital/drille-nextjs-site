@@ -12,7 +12,7 @@ const items = [
     id: "1",
     title: "Who am I?",
     content:
-      "I’m Ali Imam — a designer and creative developer focused on building digital experiences that are minimal, meaningful, and timeless.",
+      "I’m Ali Imam, a designer and creative developer focused on building digital experiences that are minimal, meaningful, and timeless.",
   },
   {
     id: "2",
@@ -24,7 +24,7 @@ const items = [
     id: "3",
     title: "My design approach",
     content:
-      "For me, design isn’t just visuals — it’s how something feels and works. I focus on clarity, detail, and storytelling in every project.",
+      "For me, design isn’t just visuals. It’s how something feels and works. I focus on clarity, detail, and storytelling in every project.",
   },
   {
     id: "4",
@@ -48,7 +48,7 @@ const items = [
     id: "7",
     title: "My toolkit",
     content:
-      "Figma, Next.js, and modern frameworks are part of my process — but for me, tools always serve the idea, not the other way around.",
+      "Figma, Next.js, and modern frameworks are part of my process, but for me, tools always serve the idea, not the other way around.",
   },
   {
     id: "8",

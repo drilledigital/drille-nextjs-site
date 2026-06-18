@@ -4,7 +4,7 @@ import WorksOverview from "@/components/works-overview"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Work — Drille Digital",
+  title: "Work | Drille Digital",
   description: "Selected projects and case studies from Drille Digital.",
 }
 

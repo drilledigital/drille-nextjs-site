@@ -39,7 +39,7 @@ function BodyText({ children }: { children: React.ReactNode }) {
   )
 }
 
-function ImagePlaceholder({ tall = false, label = "Visual — Coming Soon" }: { tall?: boolean; label?: string }) {
+function ImagePlaceholder({ tall = false, label = "Visual Coming Soon" }: { tall?: boolean; label?: string }) {
   return (
     <div className={`w-full rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center mt-10 ${tall ? "h-[440px] md:h-[560px]" : "h-[280px] md:h-[380px]"}`}>
       <span className="text-[11px] tracking-widest uppercase text-white/20">{label}</span>
@@ -153,14 +153,14 @@ export default function CaseStudyContent({ caseStudy: cs }: { caseStudy: CaseStu
                 <Image src={cs.images[2]} alt="detail 1" fill className="object-cover" />
               </div>
             ) : (
-              <ImagePlaceholder label="Detail — Coming Soon" />
+              <ImagePlaceholder label="Detail Coming Soon" />
             )}
             {cs.images[3] ? (
               <div className="relative h-64 rounded-2xl overflow-hidden">
                 <Image src={cs.images[3]} alt="detail 2" fill className="object-cover" />
               </div>
             ) : (
-              <ImagePlaceholder label="Detail — Coming Soon" />
+              <ImagePlaceholder label="Detail Coming Soon" />
             )}
           </div>
 
@@ -224,7 +224,7 @@ export default function CaseStudyContent({ caseStudy: cs }: { caseStudy: CaseStu
                 Let&apos;s build something great together.
               </h2>
               <p className="text-white/50 text-base max-w-sm mb-8">
-                Whether you have a brief or just an idea — we&apos;d love to hear from you.
+                Whether you have a brief or just an idea, we&apos;d love to hear from you.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link

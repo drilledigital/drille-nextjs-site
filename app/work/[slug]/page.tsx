@@ -18,7 +18,7 @@ export async function generateMetadata({
   const cs = getCaseStudyBySlug(slug)
   if (!cs) return {}
   return {
-    title: `${cs.title} — Drille Digital`,
+    title: `${cs.title} | Drille Digital`,
     description: cs.overview.slice(0, 160),
   }
 }
