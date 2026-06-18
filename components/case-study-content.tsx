@@ -170,28 +170,6 @@ export default function CaseStudyContent({ caseStudy: cs }: { caseStudy: CaseStu
         </div>
       </section>
 
-      {/* ── Quote block ─────────────────────────────────── */}
-      {cs.quoteAuthor && <section className="px-6 md:px-12 lg:px-20 py-20 md:py-28">
-        <div className="max-w-4xl mx-auto">
-          <Divider />
-          <div className="py-16 md:py-20">
-            <p className="text-[10px] tracking-widest uppercase text-white/25 mb-10">Client Perspective</p>
-            <blockquote className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold text-amber-50 leading-[1.35] mb-12">
-              &ldquo;{cs.quote}&rdquo;
-            </blockquote>
-            <div className="flex items-center gap-4">
-              <div className="w-9 h-9 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-xs font-semibold text-white">
-                {cs.quoteAuthor.charAt(0)}
-              </div>
-              <div>
-                <p className="text-sm font-medium text-white/80">{cs.quoteAuthor}</p>
-                <p className="text-xs text-white/35 mt-0.5">{cs.quoteRole}</p>
-              </div>
-            </div>
-          </div>
-          <Divider />
-        </div>
-      </section>}
 
       {/* ── Back nav ────────────────────────────────────── */}
       <div className="px-6 md:px-12 lg:px-20 pb-12">
