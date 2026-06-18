@@ -33,7 +33,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 
 function BodyText({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-base md:text-lg text-white/55 leading-[1.85] font-light">
+    <p className="text-base md:text-lg text-white leading-[1.85] font-normal">
       {children}
     </p>
   )
@@ -85,7 +85,7 @@ export default function CaseStudyContent({ caseStudy: cs }: { caseStudy: CaseStu
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-semibold text-amber-50 leading-[1.05] tracking-tight">
             {cs.title}
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-white/45 font-light max-w-2xl">
+          <p className="mt-4 text-lg md:text-xl text-white/70 font-normal max-w-2xl">
             {cs.subtitle}
           </p>
           <div className="flex flex-wrap gap-2 mt-8">
@@ -103,15 +103,15 @@ export default function CaseStudyContent({ caseStudy: cs }: { caseStudy: CaseStu
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 py-8">
             <div>
               <p className="text-[10px] tracking-widest uppercase text-white/25 mb-2">Industry</p>
-              <p className="text-sm text-white/65">{cs.tags[0]}</p>
+              <p className="text-sm text-white/80">{cs.tags[0]}</p>
             </div>
             <div>
               <p className="text-[10px] tracking-widest uppercase text-white/25 mb-2">Timeline</p>
-              <p className="text-sm text-white/65">{cs.duration}</p>
+              <p className="text-sm text-white/80">{cs.duration}</p>
             </div>
             <div>
               <p className="text-[10px] tracking-widest uppercase text-white/25 mb-2">Scope</p>
-              <p className="text-sm text-white/65">{cs.tags.slice(1).join(", ")}</p>
+              <p className="text-sm text-white/80">{cs.tags.slice(1).join(", ")}</p>
             </div>
           </div>
           <Divider />
