@@ -149,7 +149,7 @@ export default function HeroSection() {
 
                   <div className="flex shrink-0 items-center">
                     <img
-                      className="mx-auto h-8 w-auto opacity-70 filter-to-white"
+                      className="mx-auto h-13 w-auto opacity-70 filter-to-white"
                       src="/assets/logos/laravel-lockup-rgb.svg"
                       alt="Laravel Logo"
                       height="32"
