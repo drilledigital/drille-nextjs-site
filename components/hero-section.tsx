@@ -137,6 +137,24 @@ export default function HeroSection() {
                       height="24"
                     />
                   </div>
+
+                  <div className="flex shrink-0 items-center">
+                    <img
+                      className="mx-auto h-5 w-auto opacity-70 filter-to-white"
+                      src="/assets/logos/php-logo.svg"
+                      alt="PHP Logo"
+                      height="20"
+                    />
+                  </div>
+
+                  <div className="flex shrink-0 items-center">
+                    <img
+                      className="mx-auto h-5 w-auto opacity-70 filter-to-white"
+                      src="/assets/logos/laravel-logomark.svg"
+                      alt="Laravel Logo"
+                      height="20"
+                    />
+                  </div>
                 </InfiniteSlider>
               </div>
             </div>

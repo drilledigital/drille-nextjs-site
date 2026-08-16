@@ -65,29 +65,6 @@ export const caseStudies: CaseStudy[] = [
     images: [],
   },
   {
-    slug: "three-twenty-one",
-    title: "Three Twenty One",
-    subtitle: "Commerce experiences built for scale",
-    category: "E-Commerce · SEO Marketing · Website",
-    duration: "10 weeks",
-    date: "Feb 2025",
-    heroImage: "/assets/images/ThreeTwentyOne Mockup.png",
-    tags: ["E-commerce", "SEO Marketing", "Website"],
-    overview:
-      "Three Twenty One is a growing retail brand operating across physical and digital channels in Ghana. When they came to Drille Digital, they had a functioning but underperforming online store that wasn't converting at the rate their foot traffic suggested it should. The engagement was structured in two phases: a deep audit and strategic overhaul of the existing e-commerce experience, followed by a full rebuild and an SEO marketing programme designed to drive sustained organic growth. The goal was to turn the website from a secondary channel into a genuine revenue engine.",
-    challenge:
-      "The original store had been built quickly and hadn't kept pace with the business's growth. Product discovery was poor, and users couldn't find what they were looking for without already knowing it was there. The checkout experience had too much friction, with an abandonment rate that pointed to process problems rather than demand problems. On the SEO side, the site had essentially no organic presence and was invisible to the search queries that should have been driving its best customers. The brand also lacked a consistent visual language online, which was eroding the trust that the physical stores had carefully built.",
-    solution:
-      "We rebuilt the store from the ground up on a modern e-commerce stack, with information architecture designed around how customers actually browse, by lifestyle context rather than just product category. The checkout flow was stripped to its essentials, reducing the number of steps required to complete a purchase. A new visual system aligned the digital experience with the warmth and quality of the in-store experience. The SEO programme ran in parallel, where we conducted keyword research, rebuilt the site's content architecture around high-intent queries, and developed an on-page content strategy that compounded month over month.",
-    results:
-      "Within three months of launch, organic search traffic had grown significantly, with several category pages ranking on the first page of results for key terms. Conversion rates improved, and the average order value increased as better product discovery encouraged cross-category shopping. The checkout abandonment rate dropped sharply in the first thirty days.",
-    quote:
-      "We knew the website wasn't working as hard as it should, but we didn't know how to fix it. Drille Digital made it look easy, and the results have been real.",
-    quoteAuthor: "Jeffrey",
-    quoteRole: "Three Twenty One",
-    images: [],
-  },
-  {
     slug: "closet",
     title: "Closet",
     subtitle: "AI-powered fashion e-commerce, reimagined",

@@ -48,24 +48,18 @@ const AboutSection = () => {
     },
     { 
       id: 2, 
-      alt: 'ThreeTwentyOneLogo',
-      src: '/assets/images/threetwentyonelogo-removebg-preview.png',
-      scale: 1.0  // 👈 Example: Change to 1.2 to make this logo 20% bigger
-    },
-    { 
-      id: 3, 
       alt: 'CloudFruition Logo',
       src: '/assets/images/cloudfruition_symbol-removebg-preview.png',
       scale: 1.0  // 👈 Example: Change to 0.8 to make this logo 20% smaller
     },
     {
-      id: 4,
+      id: 3,
       alt: 'P1M Logo',
       src: '/assets/images/Project_One_Million_Black_Logo-removebg-preview.png',
       scale: 1.3  // 👈 Adjust size independently
     },
     {
-      id: 5,
+      id: 4,
       alt: 'Closet Logo',
       src: '/assets/images/Closet Logo White No BG.png',
       scale: 1.3  // 👈 Adjust size independently

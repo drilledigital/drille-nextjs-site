@@ -33,14 +33,6 @@ const projects: Project[] = [
   },
   {
     id: "3",
-    title: "Three Twenty One",
-    subtitle: "Commerce experiences built for scale",
-    image: "/assets/images/ThreeTwentyOne Mockup.png",
-    tags: ["E-commerce", "SEO Marketing", "Website"],
-    slug: "three-twenty-one",
-  },
-  {
-    id: "4",
     title: "Closet",
     subtitle: "Ai Powered Fashion E-commerce",
     image: "/assets/images/Closet Fashion Laptop Mockup.png",
@@ -48,7 +40,7 @@ const projects: Project[] = [
     slug: "closet",
   },
   {
-    id: "5",
+    id: "4",
     title: "Grandport",
     subtitle: "Luxury Real Estate",
     image: "/assets/images/Grandport framer mockup.png",
@@ -56,7 +48,7 @@ const projects: Project[] = [
     slug: "grandport",
   },
   {
-    id: "6",
+    id: "5",
     title: "Infrastructure Institute for Development",
     subtitle: "Shaping Africa's Infrastructure Future",
     image: "/assets/images/IID web mockup.png",
@@ -64,7 +56,7 @@ const projects: Project[] = [
     slug: "infrastructure-institute-for-development",
   },
   {
-    id: "7",
+    id: "6",
     title: "Doxa Scholarships",
     subtitle: "Scholarship Application Platform",
     image: "/assets/images/Doxa Scholarships Mockups Hero.png",
@@ -72,7 +64,7 @@ const projects: Project[] = [
     slug: "doxa-scholarships",
   },
   {
-    id: "8",
+    id: "7",
     title: "Beryl's Quick Snacks",
     subtitle: "Online Food Brand",
     image: "/assets/images/Berylsquicksnacks UI Mockup.png",
